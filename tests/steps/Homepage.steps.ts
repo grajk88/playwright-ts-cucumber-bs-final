@@ -5,15 +5,12 @@ const { chromium, expect } = require("@playwright/test");
 import { Page } from '@playwright/test';
 import { Browser } from '@playwright/test';
 
-
-setDefaultTimeout(20 * 1000);
-
 let page: Page;
 let browser: Browser;
 
 Before(async function () {
 
-    browser = await chromium.launch({ headless: false });
+    browser = await chromium.launch({ headless: true });
 
     const context = await browser.newContext();
 

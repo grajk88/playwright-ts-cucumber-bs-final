@@ -12,6 +12,11 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  timeout: 30000, // Sets the timeout for each test in milliseconds (30 seconds)
+  use: {
+    actionTimeout: 5000, // Timeout for individual actions like `click`, `goto`, etc. (5 seconds)
+    navigationTimeout: 15000, // Timeout for navigation actions like `page.goto` (15 seconds)
+  },
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -36,7 +41,7 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],headless: true },
+      use: { ...devices['Desktop Chrome'] },
     },
 
 
