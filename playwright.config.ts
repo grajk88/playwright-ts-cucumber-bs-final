@@ -13,10 +13,6 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   timeout: 30000, // Sets the timeout for each test in milliseconds (30 seconds)
-  use: {
-    actionTimeout: 5000, // Timeout for individual actions like `click`, `goto`, etc. (5 seconds)
-    navigationTimeout: 15000, // Timeout for navigation actions like `page.goto` (15 seconds)
-  },
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -30,6 +26,8 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    actionTimeout: 5000, // Timeout for individual actions like `click`, `goto`, etc. (5 seconds)
+    navigationTimeout: 15000, // Timeout for navigation actions like `page.goto` (15 seconds)
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
