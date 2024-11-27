@@ -1,1 +1,1 @@
-tests/features/Test.feature:5:16
+tests/features/Test.feature:5

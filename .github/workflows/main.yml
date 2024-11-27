@@ -19,8 +19,8 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright Cucumber tests
         run: |
-          npx cucumber-js --format json:test-result/cucumber-report.json
-          if grep -q '"status": "failed"' test-result/cucumber-report.json; then
+          npm run execute:regression
+          if grep -q '"status": "failed"' test-result/cucumber-report/cucumber-report.json; then
             echo "Cucumber scenarios failed."
             exit 1
           fi
@@ -29,5 +29,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Cucumber Reports
-          path: test-result/cucumber-report/
+          path: test-result/cucumber-report
           retention-days: 30
