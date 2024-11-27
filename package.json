@@ -1,0 +1,23 @@
+{
+  "name": "playwright-typescript-cucumber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "execute:smoke":"npx cucumber-js test --tags '@smoke'",
+    "execute:regression":"npx cucumber-js test --tags '@regression' && npm run generate:report",
+    "generate:report":"npx ts-node ./tests/utils/GenerateReport.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "multiple-cucumber-html-reporter": "^3.8.0",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^11.1.0"
+  }
+}

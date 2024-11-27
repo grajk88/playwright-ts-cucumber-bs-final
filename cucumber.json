@@ -1,0 +1,38 @@
+{
+    "default": {
+        "paths": [
+            "tests/features/"
+        ],
+        "formatOptions": {
+            "snippetInterface": "async-await"
+        },
+        "require": [
+            "tests/steps/*.ts"
+        ],
+        "requireModule": [
+            "ts-node/register"
+        ],
+        "format": [
+            "json:test-result/cucumber-report/cucumber-report.json",
+            "rerun:@rerun.txt"
+        ],
+        "parallel": 5,
+        "retry": 1
+    },
+    "rerun": {
+        "formatOptions": {
+            "snippetInterface": "async-await"
+        },
+        "require": [
+            "tests/steps/*.ts"
+        ],
+        "requireModule": [
+            "ts-node/register"
+        ],
+        "format": [
+            "json:test-result/cucumber-report/cucumber-report.json",
+            "rerun:@rerun.txt"
+        ],
+        "parallel": 2
+    }
+}
