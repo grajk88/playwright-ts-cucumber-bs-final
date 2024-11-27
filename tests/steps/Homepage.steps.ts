@@ -6,7 +6,7 @@ import { Page } from '@playwright/test';
 import { Browser } from '@playwright/test';
 
 
-setDefaultTimeout(60 * 1000);
+setDefaultTimeout(20 * 1000);
 
 let page: Page;
 let browser: Browser;
@@ -29,9 +29,9 @@ Given("User navigates to the Browserstack Homepage", async () => {
 
 When('User clicks on Product Menu', async function () {
 
-    await page.locator('button[aria-label="Products"]').waitFor();
+    await page.locator('button[aria-label="Productiis"]').waitFor();
 
-    await page.locator('button[aria-label="Products"]').click();
+    await page.locator('button[aria-label="Productiiiiis"]').click();
 
 });
 

@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "execute:smoke":"npx cucumber-js test --tags '@smoke'",
-    "execute:regression":"npx cucumber-js test --tags '@regression' && npm run generate:report",
+    "execute:regression":"npx cucumber-js test --tags '@regression'; npm run generate:report",
     "generate:report":"npx ts-node ./tests/utils/GenerateReport.ts"
   },
   "keywords": [],
