@@ -26,9 +26,9 @@ Given("User navigates to the Browserstack Homepage", async () => {
 
 When('User clicks on Product Menu', async function () {
 
-    await page.locator('button[aria-label="Productiis"]').waitFor();
+    await page.locator('button[aria-label="Products"]').waitFor();
 
-    await page.locator('button[aria-label="Productiiiiis"]').click();
+    await page.locator('button[aria-label="Products"]').click();
 
 });
 
