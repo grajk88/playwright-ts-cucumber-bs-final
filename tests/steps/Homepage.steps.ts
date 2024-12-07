@@ -46,7 +46,7 @@ Given('User Navigates to Browserstack Homepage', async function () {
 
 });
 
-When('User clicks on Pricing Menu', async function () {
+When('User clicks on Pricing Menuu', async function () {
 
     await page.locator('a[title="Pricing"]').click();
 
