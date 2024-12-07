@@ -1,6 +1,7 @@
 const { Given, When, Then, Before, After, setDefaultTimeout } = require("@cucumber/cucumber");
 
 const { chromium, expect } = require("@playwright/test");
+import { BASE_URL } from '../utils/Environment';
 
 import { Page } from '@playwright/test';
 import { Browser } from '@playwright/test';
@@ -20,7 +21,7 @@ Before(async function () {
 
 Given("User navigates to the Browserstack Homepage", async () => {
 
-    await page.goto("https://www.browserstack.com/");
+    await page.goto(BASE_URL);
 
 });
 
@@ -36,13 +37,13 @@ Then('It should show Web Testing Product', async function () {
 
     await page.locator('div[aria-label="Products"] button[title="Web Testing"]').waitFor();
 
-    expect(await page.locator('div[aria-label="Products"] button[title="Web Testing"] span').isVisible()).toBeTruthy()
+    expect(await page.locator('div[aria-label="Products"] button[title="Web Testijjjjng"] span').isVisible()).toBeTruthy()
 
 });
 
 Given('User Navigates to Browserstack Homepage', async function () {
 
-    await page.goto("https://www.browserstack.com/");
+    await page.goto(BASE_URL);
 
 });
 
