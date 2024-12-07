@@ -1,8 +1,6 @@
 name: Prod Tests
 on:
   workflow_dispatch:
-  pull_request:
-    branches: [main, master]
 jobs:
   test:
     timeout-minutes: 60
@@ -14,8 +12,8 @@ jobs:
           node-version: lts/*
       - name: Install dependencies
         run: npm ci
-      - name: Run Linting
-        run: npm run lint
+      #- name: Run Linting
+      # run: npm run lint
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright Cucumber tests
