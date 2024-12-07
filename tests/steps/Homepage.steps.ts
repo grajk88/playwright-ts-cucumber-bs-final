@@ -37,7 +37,7 @@ Then('It should show Web Testing Product', async function () {
 
     await page.locator('div[aria-label="Products"] button[title="Web Testing"]').waitFor();
 
-    expect(await page.locator('div[aria-label="Products"] button[title="Web Testijjjjng"] span').isVisible()).toBeTruthy()
+    expect(await page.locator('div[aria-label="Products"] button[title="Web Testing"] span').isVisible()).toBeTruthy()
 
 });
 
