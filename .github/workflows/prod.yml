@@ -27,6 +27,7 @@ jobs:
             exit 1
           fi
       - name: Calculate Total Test Duration
+        if: ${{ always() }}
         id: end_time
         run: |
             end_time=$(date +%s)
