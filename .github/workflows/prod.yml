@@ -18,7 +18,7 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright Cucumber tests
         run: |
-          npm run prod:sample
+          npm run prod:regression
           if grep -q '"status": "failed"' test-result/cucumber-report/cucumber-report.json; then
             echo "Cucumber scenarios failed."
             exit 1
@@ -36,8 +36,3 @@ jobs:
       - name: Add CTRF Report to GitHub Actions Summary
         run: |
             cat ./ctrf-report.md >> $GITHUB_STEP_SUMMARY
-      - name: Upload CTRF Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: CTRF-Report
-          path: ctrf-report.md
