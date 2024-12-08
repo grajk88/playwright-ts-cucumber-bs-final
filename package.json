@@ -3,21 +3,26 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "execute:smoke": "npx cucumber-js --format json:test-result/cucumber-report/cucumber-report.json --tags '@smoke'; npm run generate:report",
-    "execute:regression": "npx cucumber-js --format json:test-result/cucumber-report/cucumber-report.json --tags '@regression'; npm run generate:report",
-    "generate:report": "npx ts-node ./tests/utils/GenerateReport.ts",
-    "generate:ctrf": "ctrf-generator test-result\\cucumber-report\\cucumber-report.json"
+    "lint": "eslint .",
+    "prod:regression": " ENV=prod npx cucumber-js --format json:test-result/cucumber-report/cucumber-report.json --tags '@regression'; npm run generate:report",
+    "generate:report": "npx ts-node ./tests/utils/GenerateReport.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^9.16.0",
     "@playwright/test": "^1.49.0",
     "@types/node": "^22.10.0",
-    "cucumber-ctrf-generator": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0",
     "multiple-cucumber-html-reporter": "^3.8.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typescript-eslint": "^8.17.0"
   },
   "dependencies": {
     "@cucumber/cucumber": "^11.1.0",
