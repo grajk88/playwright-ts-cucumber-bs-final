@@ -1,4 +1,4 @@
-@regression
+@regression @sample
 Feature: Homepage Functionality
 
   @smoke
