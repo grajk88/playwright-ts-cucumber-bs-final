@@ -33,6 +33,10 @@ jobs:
       - name: Generate CTRF Report
         run: |
             npm run generate:ctrf
+      - name: Add CTRF Report to GitHub Actions Summary
+        run: |
+            echo "## 📊 CTRF Test Report" >> $GITHUB_STEP_SUMMARY
+            cat ./ctrf-report.md >> $GITHUB_STEP_SUMMARY
       - name: Upload CTRF Report
         uses: actions/upload-artifact@v4
         with:
