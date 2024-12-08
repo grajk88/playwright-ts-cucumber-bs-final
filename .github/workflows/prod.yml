@@ -31,8 +31,10 @@ jobs:
           path: test-result/cucumber-report
           retention-days: 30
       - name: Generate CTRF Report
+        if: ${{ always() }}
         run: |
             npm run generate:ctrf
       - name: Add CTRF Report to GitHub Actions Summary
+        if: ${{ always() }}
         run: |
             cat ./ctrf-report.md >> $GITHUB_STEP_SUMMARY
