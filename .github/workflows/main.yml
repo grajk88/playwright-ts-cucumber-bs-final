@@ -24,6 +24,9 @@ jobs:
             echo "Cucumber scenarios failed."
             exit 1
           fi
+      - name: Generate CTRF Report
+        run: |
+          npm run generate:ctrf
       - name: Upload Playwright Cucumber Report
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
@@ -31,3 +34,8 @@ jobs:
           name: Cucumber Reports
           path: test-result/cucumber-report
           retention-days: 30
+      - name: Upload CTRF Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: CTRF-Report
+          path: ctrf-report.md

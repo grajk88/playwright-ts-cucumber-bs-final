@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "execute:smoke":"npx cucumber-js --format json:test-result/cucumber-report/cucumber-report.json --tags '@smoke'; npm run generate:report",
-    "execute:regression":"npx cucumber-js --format json:test-result/cucumber-report/cucumber-report.json --tags '@regression'; npm run generate:report",
-    "generate:report":"npx ts-node ./tests/utils/GenerateReport.ts"
+    "execute:smoke": "npx cucumber-js --format json:test-result/cucumber-report/cucumber-report.json --tags '@smoke'; npm run generate:report",
+    "execute:regression": "npx cucumber-js --format json:test-result/cucumber-report/cucumber-report.json --tags '@regression'; npm run generate:report",
+    "generate:report": "npx ts-node ./tests/utils/GenerateReport.ts",
+    "generate:ctrf": "ctrf-generator test-result\\cucumber-report\\cucumber-report.json"
   },
   "keywords": [],
   "author": "",
@@ -14,10 +15,12 @@
   "devDependencies": {
     "@playwright/test": "^1.49.0",
     "@types/node": "^22.10.0",
+    "cucumber-ctrf-generator": "^1.0.3",
     "multiple-cucumber-html-reporter": "^3.8.0",
     "ts-node": "^10.9.1"
   },
   "dependencies": {
-    "@cucumber/cucumber": "^11.1.0"
+    "@cucumber/cucumber": "^11.1.0",
+    "playwright-typescript-cucumber": "file:"
   }
 }
