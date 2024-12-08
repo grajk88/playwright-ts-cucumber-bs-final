@@ -16,6 +16,9 @@ jobs:
       # run: npm run lint
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Start Test Execution Timer
+        id: start_time
+        run: echo "start_time=$(date +%s)" >> $GITHUB_ENV
       - name: Run Playwright Cucumber tests
         run: |
           npm run prod:regression
@@ -23,6 +26,13 @@ jobs:
             echo "Cucumber scenarios failed."
             exit 1
           fi
+      - name: Calculate Total Test Duration
+        id: end_time
+        run: |
+            end_time=$(date +%s)
+            duration=$((end_time - $start_time))
+            echo "total_duration=${duration}" >> $GITHUB_ENV
+            echo "Total Test Duration: $((duration / 60))m $((duration % 60))s"
       - name: Upload Playwright Cucumber Report
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
@@ -37,4 +47,5 @@ jobs:
       - name: Add CTRF Report to GitHub Actions Summary
         if: ${{ always() }}
         run: |
+            echo "- **Total Duration**: $((total_duration / 60))m $((total_duration % 60))s" >> $GITHUB_STEP_SUMMARY
             cat ./ctrf-report.md >> $GITHUB_STEP_SUMMARY
