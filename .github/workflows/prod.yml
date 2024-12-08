@@ -48,5 +48,5 @@ jobs:
       - name: Add CTRF Report to GitHub Actions Summary
         if: ${{ always() }}
         run: |
-            echo "- ## Total Duration ## : $((total_duration / 60))m $((total_duration % 60))s" >> $GITHUB_STEP_SUMMARY
+            echo "- ## Total Duration : $((total_duration / 60))m $((total_duration % 60))s" >> $GITHUB_STEP_SUMMARY
             cat ./ctrf-report.md >> $GITHUB_STEP_SUMMARY
