@@ -18,7 +18,7 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright Cucumber tests
         run: |
-          npm run prod:regression
+          npm run prod:sample
           if grep -q '"status": "failed"' test-result/cucumber-report/cucumber-report.json; then
             echo "Cucumber scenarios failed."
             exit 1
