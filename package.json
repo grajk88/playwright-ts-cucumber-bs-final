@@ -19,7 +19,7 @@
     "@types/node": "^22.10.0",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
     "@typescript-eslint/parser": "^8.17.0",
-    "cucumber-ctrf-generator": "^1.0.4",
+    "cucumber-ctrf-generator": "^1.0.12",
     "dotenv": "^16.4.7",
     "eslint": "^9.16.0",
     "globals": "^15.13.0",
